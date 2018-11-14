@@ -1,14 +1,112 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="brown">
+      <button ion-button menuToggle color="black">
+          <ion-icon name="menu"></ion-icon>
+        </button>
     <ion-title>
-      Ionic Blank
+   <h1 style="text-align: center">Quotes.me</h1>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="masters">
+  
+  <div class = "list">
+      <div class = "item">
+        <ion-card style="min-height: 200px">
+          <ion-card-content style="padding:50px ; text-align: center">
+            <h2><b>" Life isn't about getting and having, it's about giving and being."</b></h2>
+              <p style="margin-left:150px"> -Kevin Kruse.</p>
+              <!-- <ion-icon name="share" style="margin"></ion-icon> -->
+          </ion-card-content>
+           <!-- <ion-list> 
+            <ion-item>
+              <ion-input [(ngModel)]="message" placeholder="Enter message"></ion-input>
+             </ion-item>
+             <ion-item>
+              <ion-input [(ngModel)]="file" placeholder="Enter file"></ion-input>
+             </ion-item>
+             <ion-item>
+              <ion-input [(ngModel)]="link" placeholder="Enter link"></ion-input>
+             </ion-item>
+             <ion-item>
+              <ion-input [(ngModel)]="subject" placeholder="Enter subject"></ion-input>
+             </ion-item>
+            </ion-list>-->
+          <ion-row>
+              <ion-col text-right>
+                <button item-end ion-button clear icon-end tappable (click)="share()">
+                  <ion-icon name="share"></ion-icon>
+                </button>
+                  </ion-col>
+                </ion-row>
+        </ion-card>
+      </div>
+      
+      <ion-card style="height:75px; padding:15px,10px,15px,10px">
+          <div>
+            <ion-item tappable (click)="goTo('QuotePage')">
+                <ion-avatar item-left>
+                    <img src="assets/imgs/quotes.png" alt="not found" >
+                     </ion-avatar>
+            <p style=" color: chocolate; font-size: 30px">&nbsp;&nbsp;&nbsp;&nbsp; Quotes</p>
+            </ion-item>
+        </div>
+      </ion-card>
+     <!-- <ion-card style="height:75px; padding:15px,10px,15px,10px">
+          <div>
+            <ion-item tappable (click)="goTo('CategoryPage')">
+                <ion-avatar item-left>
+                    <img src="assets/imgs/cat.png" alt="not found">
+                     </ion-avatar>
+            <p style="color: chocolate; font-size: 30px">&nbsp;&nbsp;&nbsp;&nbsp; Category</p>
+            </ion-item>
+        </div>
+      </ion-card>-->
+      <ion-card style="height:75px; padding:15px,10px,15px,10px">
+          <div>
+            <ion-item tappable (click)="goTo('AuthorPage')">
+                <ion-avatar item-left>
+                    <img src="assets/imgs/author.jpg" alt="not found">
+                     </ion-avatar>
+            <p style=" color: chocolate; font-size: 30px">&nbsp;&nbsp;&nbsp;&nbsp; Author</p>
+            </ion-item>
+        </div>
+      </ion-card>
+      <ion-card style="height:75px; padding:15px,10px,15px,10px">
+          <div>
+            <ion-item tappable (click)="goTo('FavPage')">
+                <ion-avatar item-left>
+                    <img src="assets/imgs/fav.png" alt="not found">
+                     </ion-avatar>
+            <p style=" color: chocolate; font-size: 30px">&nbsp;&nbsp;&nbsp;&nbsp; Favorite</p>
+            </ion-item>
+        </div>
+      </ion-card>
+   </div>
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+       <ion-row align-items-center >
+      <!--  <ion-col class="total" align-self-center>
+          <h5>
+            <span class="disc" *ngIf="p1.per_discount">{{p1.mrp | money}}</span>
+            {{ pricestrikt(p1.per_discount,p1.mrp)| money}}
+          </h5>
+          <ion-row no-padding class="reviews">
+            <ion-col col-auto no-padding>
+              <ion-rating *ngIf="p1.average_rating" item-start
+                [numStars]="5"
+                [readOnly]="true"
+                [value]="p1.average_rating">
+              </ion-rating>
+               <span *ngIf="product.rating_count">{{product.rating_count}}</span> 
+            </ion-col>
+          </ion-row>
+        </ion-col> -->
+        <ion-col align-self-center>
+          <ion-card></ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-footer> 

@@ -1,0 +1,51 @@
+<!--
+  Generated template for the CategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="brown">
+    <ion-title><h1 style="margin-left: 35px">Category</h1></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background">
+
+  <ion-card (click)="goTo('CatdetailsPage')" *ngFor="let q of response">
+    
+          <img src="assets/imgs/{{q.img_name}}"/>
+          <div class="card-title">{{q.category_name}}</div>
+       
+        </ion-card>
+      
+        <!-- <ion-card (click)="goTo('CatdetailsPage')"> 
+          <img src="assets/imgs/Wisdom.jpg"/>
+          <div class="card-title">Wisdom</div>
+         
+        </ion-card>
+      
+        <ion-card (click)="goTo('CatdetailsPage')">
+          <img src="assets/imgs/love.jpg"/>
+          <div class="card-title">Love</div>
+          
+        </ion-card>
+      
+        <ion-card (click)="goTo('CatdetailsPage')">
+          <img src="assets/imgs/sucess.jpg"/>
+          <div class="card-title">Work & Success</div>
+          
+        </ion-card>
+
+        <ion-card (click)="goTo('CatdetailsPage')">
+            <img src="assets/imgs/undefine.jpg"/>
+            <div class="card-title">Undefined</div>
+            
+          </ion-card>-->
+      
+     
+
+</ion-content>
