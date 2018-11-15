@@ -15,8 +15,9 @@
       <div class = "item">
         <ion-card style="min-height: 200px">
           <ion-card-content style="padding:50px ; text-align: center">
-            <h2 style="margin-top:30px"><b>" Life isn't about getting and having, it's about giving and being."</b></h2>
-              <p style="margin-left:150px"> -Kevin Kruse.</p>
+            <h2 style="margin-top:30px"><b>"{{response[ranno].text}}"</b></h2>
+              <p style="margin-left:150px">-{{response[ranno].from}}</p>
+              
               <!-- <ion-icon name="share" style="margin"></ion-icon> -->
           </ion-card-content>
            <!-- <ion-list> 
@@ -45,8 +46,8 @@
       
       <ion-card style="height:75px; padding:15px,10px,15px,10px">
           <div>
-            <ion-item tappable (click)="goTo('QuotePage')">
-                <ion-avatar item-left style="vertical-align:55px">
+            <ion-item tappable (click)="goTo('QuotePage')" style="margin-top:6px">
+                <ion-avatar item-left >
                     <img src="assets/imgs/quotes.png" alt="not found" >
                      </ion-avatar>
             <p style=" color: chocolate; font-size: 30px;">&nbsp;&nbsp;&nbsp;&nbsp; Quotes</p>
@@ -65,7 +66,7 @@
       </ion-card>-->
       <ion-card style="height:75px; padding:15px,10px,15px,10px">
           <div>
-            <ion-item tappable (click)="goTo('AuthorPage')">
+            <ion-item tappable (click)="goTo('AuthorPage')" style="margin-top:6px">
                 <ion-avatar item-left>
                     <img src="assets/imgs/author.jpg" alt="not found">
                      </ion-avatar>
@@ -75,7 +76,7 @@
       </ion-card>
       <ion-card style="height:75px; padding:15px,10px,15px,10px">
           <div>
-            <ion-item tappable (click)="goTo('FavPage')">
+            <ion-item tappable (click)="goTo('FavPage')" style="margin-top:6px">
                 <ion-avatar item-left>
                     <img src="assets/imgs/fav.png" alt="not found">
                      </ion-avatar>

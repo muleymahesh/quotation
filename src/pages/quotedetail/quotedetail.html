@@ -14,22 +14,28 @@
 
 <ion-content class="masters">
 
-  <ion-card style="min-height:150px; padding:15px,10px,15px,10px; margin-top: 150px">
-    <div>
+  <!--ion-card style="min-height:300px; padding:15px,10px,15px,10px; margin-top: 150px; border: none !important"-->
+    <div style="margin-top: 150px">
       
-      <ion-item >
+      <!-- <ion-item style="background-color: #F4F4F4;"> -->
         <ion-avatar item-left >
-          <img src="assets/imgs/{{quote.img_name}}" alt="not found" style="margin-left:125px">
+          <img src="assets/imgs/{{response[i].img_name}}" alt="not found" height="90px" width="90px" style="margin-left:125px; border-radius: 60%">
            </ion-avatar>
       
-      </ion-item>
-      <p style="padding:15px; font-size: 17px; text-align: center"><b>{{quote.text}}</b></p>
-      <p style=" color: black; font-size: 15px;margin-left:175px">-{{quote.from}}</p><br>
-      <ion-icon name="arrow-back" style="margin-left:15px"></ion-icon>  
-      <ion-icon name="heart-outline" style="margin-left:145px"></ion-icon> 
-      <ion-icon name="arrow-forward" style="margin-left:120px"></ion-icon>
+      
+      <p style="padding:15px; font-size: 25px; text-align: center; font-family:Lucida Calligraphy;font-style: italic"><b>"{{response[i].text}}"</b></p>
+      <p style=" color: black; font-size: 20px;margin-left:175px">-{{response[i].from}}</p><br><br><br>
+      <ion-icon name="arrow-back" (click)="privous()" style="margin-left:85px"></ion-icon>  
+      <ion-icon name="heart-outline"  style="margin-left:35px"></ion-icon>
+       
+            <button item-end ion-button clear icon-end tappable (click)="share()" style="margin-bottom: 20px; margin-left:30px">
+              <ion-icon name="share"></ion-icon>
+            </button>
+             
+             
+      <ion-icon name="arrow-forward" (click)="next()" style="margin-left:40px"></ion-icon>
     </div>
-</ion-card>
+<!--/ion-card-->
 
 
 

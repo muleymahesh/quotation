@@ -17,7 +17,7 @@
 
   <div class = "list">
 
-  <ion-card style="min-height:90px; padding:15px,10px,15px,10px" *ngFor="let q of response" (click)="goTo('QuotedetailPage',q)">
+  <ion-card style="min-height:90px; padding:15px,10px,15px,10px" *ngFor="let q of response, let i=index" (click)="goTo('QuotedetailPage',i)">
       <div>
         <p style="font-size: 17px; text-align: center"><b>{{q.text}}</b></p>
         <ion-item>

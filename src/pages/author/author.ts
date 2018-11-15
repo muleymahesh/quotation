@@ -1652,4 +1652,8 @@ export class AuthorPage {
     console.log('ionViewDidLoad AuthorPage');
   }
 
+  goTo(page, params){
+		this.navCtrl.push(page,{params: params});
+	}
+
 }

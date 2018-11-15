@@ -1,31 +1,24 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController, Platform, ModalController, NavParams } from 'ionic-angular';
-import { SocialSharing } from '@ionic-native/social-sharing';
-import { Storage } from '@ionic/storage';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the AuthordetailPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-authordetail',
+  templateUrl: 'authordetail.html',
 })
-export class HomePage {
-
-  response:any;
-  message:string=null;
-  file:string=null;
-  link:string=null;
-  subject:string=null;
-  random;
-  ranno;
-  constructor(public navCtrl: NavController, private storage: Storage, private socialSharing: SocialSharing,) {
-   //this.response = JSON.stringify(this.myObj);
-   this.random=getRandomArbitrary(0,324);
-   function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-
-  }
-  this.ranno=parseInt(this.random);
-   this.response=[
-    
+export class AuthordetailPage {
+  data:any;
+response:any;
+i:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.response=[
       {
          "text":"The only people who never fail are those who never try.",
          "from":"Ilka Chase",
@@ -1653,25 +1646,18 @@ export class HomePage {
           "img_name":"Beverly_Sills.jpg"
          }
       ];
-      console.log(this.response);
+      this.data=this.navParams.data.params;
+      console.log(this.data);
   }
- 
- 
- 
 
-  goTo(page, params){
-		this.navCtrl.push(page,{params: params});
-	}
-  
-  share(){
-    this.message=" Life isn't about getting and having, it's about giving and being.";
-    this.socialSharing.share(this.message)
-    .then(()=>{
 
-    }).catch(()=>{
 
-    });
+  goTo(QuoteDetail, params){
+		this.navCtrl.push(QuoteDetail,{params});
   }
-  
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad AuthordetailPage');
+  }
 
 }
