@@ -897,7 +897,7 @@ response:any;
          "img_name":"Theodore_Roosevelt.jpg"
         },
         {  
-           "text":"“Everything started as nothing.",
+           "text":"Everything started as nothing.",
            "from":"Ben Weissenstein",
          "img_name":"Ben_Weissenstein.jpg"
         },
@@ -1653,5 +1653,11 @@ response:any;
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuotePage');
   }
+
+  goTo(QuoteDetail, params){
+		this.navCtrl.push(QuoteDetail,{params});
+  }
+  
+  
 
 }

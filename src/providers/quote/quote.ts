@@ -10,6 +10,8 @@ import { Storage } from '@ionic/storage';
 @Injectable()
 export class QuoteProvider {
 
+  
+
   private QUOTE_KEY: string = 'quote';
 
   quote: any[] = [];

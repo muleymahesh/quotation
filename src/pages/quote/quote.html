@@ -17,10 +17,10 @@
 
   <div class = "list">
 
-  <ion-card style="min-height:90px; padding:15px,10px,15px,10px" *ngFor="let q of response">
+  <ion-card style="min-height:90px; padding:15px,10px,15px,10px" *ngFor="let q of response" (click)="goTo('QuotedetailPage',q)">
       <div>
-        <p style="padding:15px; font-size: 17px; text-align: center"><b>{{q.text}}</b></p>
-        <ion-item >
+        <p style="font-size: 17px; text-align: center"><b>{{q.text}}</b></p>
+        <ion-item>
             <ion-avatar item-left >
                 <img src="assets/imgs/{{q.img_name}}" alt="not found" style="margin-left:55px">
                  </ion-avatar>
