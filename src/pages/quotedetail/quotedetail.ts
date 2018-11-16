@@ -48,8 +48,11 @@ favquotes:any[]=[];
 
   next(){
     if(this.i<this.quotes.length && this.i!=[this.quotes.length-1])
+  {
     this.i=this.i+1;
+   this. checkfav();
    }
+  }
 
   share(){
     this.message=" Life isn't about getting and having, it's about giving and being.";
@@ -60,7 +63,12 @@ favquotes:any[]=[];
 
     });
   }
+checkfav(quote)
+{
+  this.favquotes=this._quote.all;
 
+
+}
   toFav(quote){
     this._quote.post(quote);
   }
