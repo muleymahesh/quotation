@@ -16,6 +16,11 @@ import { Storage } from '@ionic/storage';
 })
 export class AuthorPage {
   response:any;
+  uniarray:any[]=[];
+  count=0;
+  x:any;
+  y:any;
+  found=false;
   constructor(public navCtrl: NavController, private storage: Storage,) {
     this.response= [  
       {  
@@ -1646,7 +1651,11 @@ export class AuthorPage {
       }
    ];
 
+this.uniqauthor();
+   
+
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AuthorPage');
@@ -1654,6 +1663,25 @@ export class AuthorPage {
 
   goTo(page, params){
 		this.navCtrl.push(page,{params: params});
-	}
+  }
+  
 
-}
+ uniqauthor(){
+
+    for(this.x=0;this.x<this.response.length;this.x++){
+    for(this.y=0;this.y<this.uniarray.length;this.y++){
+    if(this.response[this.x].from==this.uniarray[this.y].from){
+      this.found=true;
+    }
+    
+    }
+    this.count++;
+    if(this.count==1 && this.found==false){
+      this.uniarray.push(this.response[this.x]);
+    }
+    this.count=0;
+    this.found=false;
+    }
+    console.log(this.uniarray);
+    }
+  }

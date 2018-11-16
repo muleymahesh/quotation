@@ -17,6 +17,11 @@ export class AuthordetailPage {
   data:any;
 response:any;
 i:any;
+  uniarray:any[]=[];
+  count=0;
+  x:any;
+  y:any;
+  found=false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.response=[
       {
@@ -1648,16 +1653,30 @@ i:any;
       ];
       this.data=this.navParams.data.params;
       console.log(this.data);
+      this.uniqauthor();
   }
 
 
 
-  goTo(QuoteDetail, params){
-		this.navCtrl.push(QuoteDetail,{params});
+  goTo(QuoteDetail,params,i){
+		this.navCtrl.push(QuoteDetail,{params:params,i:i});
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AuthordetailPage');
   }
+
+  uniqauthor(){
+
+    for(this.x=0;this.x<this.response.length;this.x++){
+   
+  if(this.response[this.x].from==this.data.from) 
+  { 
+  this.uniarray.push(this.response[this.x]);
+}
+  }
+    console.log(this.uniarray);
+    }
+
 
 }

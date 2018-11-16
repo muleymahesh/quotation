@@ -1654,8 +1654,8 @@ response:any;
     console.log('ionViewDidLoad QuotePage');
   }
 
-  goTo(QuoteDetail, params){
-		this.navCtrl.push(QuoteDetail,{params});
+  goTo(QuoteDetail, params,i){
+		this.navCtrl.push(QuoteDetail,{params:params,i:i});
   }
   
   

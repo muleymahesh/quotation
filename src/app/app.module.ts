@@ -9,7 +9,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RestProvider} from '../providers/rest/rest';
 import { QuoteProvider } from '../providers/quote/quote';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     MyApp,
@@ -17,6 +17,7 @@ import { QuoteProvider } from '../providers/quote/quote';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
    IonicStorageModule.forRoot()
   ],

@@ -18,23 +18,57 @@ export class QuoteProvider {
   _readyPromise: Promise<any>;
 
   constructor(public http: HttpClient,public storage: Storage) {
+    this.load();
     console.log('Hello QuoteProvider Provider');
   }
 
-  add(product1: any){
-    let tmp = {
-      quantity: product1.quantity,
-      name: product1.product_name,
-      images: product1.imgs[0].img_url,
-      p_id: product1.p_id,
-      price: product1.mrp,
-      discount:product1.per_discount,
-     // regular_price: product1.regular_price,
-      on_sale: product1.offer_name,
-      in_stock: product1.status,
-      // attributes: product.attributes,
-      // variation_id: product.variation_id
+  load() {
+  
+    return this.storage.get(this.QUOTE_KEY).then((val) => {
+      if (val && val.length > 0) {
+        this.quote = val;
+        return this.quote;
+      } else {
+        this.save();
+      }
+    });
+  }
+  get all() {
+    return this.quote;
+  }
+  post(quote){
+    
+    this.toQuote(quote);
+  }
+  toQuote(quote: any){
+  
+    let exist = false;
+    for(let i in this.quote){
+     
+       if(this.quote[i].text == quote.text){
+          // this.cart[i].quantity += qty;
+          exist = true;
+         // console.log(this.cart);
+          break;
+      }
     }
+ 
+    if(!exist){
+     // product1.quantity = qty;
+      this.add(quote);
+    }
+
+    this.save();
+  }
+
+
+
+  add(quote: any){
+    let tmp = {
+      text: quote.text,
+      from: quote.from,
+      img_name: quote.img_name,
+     }
 
     this.quote.push(tmp);
    

@@ -19,14 +19,14 @@
       
       <!-- <ion-item style="background-color: #F4F4F4;"> -->
         <ion-avatar item-left >
-          <img src="assets/imgs/{{response[i].img_name}}" alt="not found" height="90px" width="90px" style="margin-left:125px; border-radius: 60%">
+          <img src="assets/imgs/{{quotes[i].img_name}}" alt="not found" height="90px" width="90px" style="margin-left:125px; border-radius: 60%">
            </ion-avatar>
       
       
-      <p style="padding:15px; font-size: 25px; text-align: center; font-family:Lucida Calligraphy;font-style: italic"><b>"{{response[i].text}}"</b></p>
-      <p style=" color: black; font-size: 20px;margin-left:175px">-{{response[i].from}}</p><br><br><br>
+      <p style="padding:15px; font-size: 25px; text-align: center; font-family:Lucida Calligraphy;font-style: italic"><b>"{{quotes[i].text}}"</b></p>
+      <p style=" color: black; font-size: 20px;margin-left:175px">-{{quotes[i].from}}</p><br><br><br>
       <ion-icon name="arrow-back" (click)="privous()" style="margin-left:85px"></ion-icon>  
-      <ion-icon name="heart-outline"  style="margin-left:35px"></ion-icon>
+      <ion-icon name="heart-outline" (click)="toFav(quotes[i])" style="margin-left:35px"></ion-icon>
        
             <button item-end ion-button clear icon-end tappable (click)="share()" style="margin-bottom: 20px; margin-left:30px">
               <ion-icon name="share"></ion-icon>

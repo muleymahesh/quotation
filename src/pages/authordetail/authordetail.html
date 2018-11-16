@@ -15,9 +15,9 @@
 
 <ion-content class="masters">
 
-    <div class = "list" *ngFor="let q of response, let i=index" (click)="goTo('QuotedetailPage',i)">
+    <div class = "list" *ngFor="let q of uniarray, let i=index" (click)="goTo('QuotedetailPage',uniarray,i)">
   
-    <ion-card *ngIf="data.from===q.from" style="min-height:90px; padding:15px,10px,15px,10px" >
+    <ion-card style="min-height:90px; padding:15px,10px,15px,10px" >
         <div >
           <p style="font-size: 17px; text-align: center"><b>{{q.text}}</b></p>
           <ion-item>
