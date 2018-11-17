@@ -11,6 +11,9 @@ import { RestProvider} from '../providers/rest/rest';
 import { QuoteProvider } from '../providers/quote/quote';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { DatabaseProvider } from '../providers/database/database';
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
+import { SQLite } from '@ionic-native/sqlite';
 @NgModule({
   declarations: [
     MyApp,
@@ -34,7 +37,11 @@ import { HttpModule } from '@angular/http';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
     QuoteProvider,
-   SocialSharing 
+   SocialSharing,
+    DatabaseProvider ,
+   
+    SQLitePorter,
+    SQLite
   ]
 })
 export class AppModule {}

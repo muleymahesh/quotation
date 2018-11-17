@@ -28,10 +28,10 @@
       <p style=" color: black; font-size: 20px;margin-left:175px">-{{quotes[i].from}}</p><br><br><br-->
       
  
-          <div class="image">
-            <ion-avatar item-right>
-             <img src="assets/imgs/{{quotes[i].img_name}}"  height="80px" width="50px"  style="border-radius: 50%; align-items: center;">
-            </ion-avatar>
+          <div align="center">
+           
+             <img src="assets/imgs/{{quotes[i].img_name}}"  height="80px" width="80px"  style="border-radius: 50%; align-items: center; ">
+          
             </div>
             <h2 style="font-family:Lucida Calligraphy;text-align: center"><b>"{{quotes[i].text}}"</b></h2>
             <p style="text-align: center">-{{quotes[i].from}}</p>
@@ -46,24 +46,29 @@
 
 
 <ion-footer>
+  <div align="center">
   <ion-toolbar >
      <ion-row align-items-center >
-
-        <ion-icon name="arrow-back" (click)="privous()" style="margin-left:85px"></ion-icon>  
+      
+        <ion-icon name="arrow-back" (click)="privous()" style="margin-left:85px"></ion-icon>
+      
+      
         <ion-icon name="heart-outline" (click)="toFav(quotes[i])" style="margin-left:35px"></ion-icon>
+        
          
               <button item-end ion-button clear icon-end tappable (click)="share()" style="margin-bottom: 10px; margin-left:30px">
+
                 <ion-icon name="share"></ion-icon>
               </button>
+            
                
                
         <ion-icon name="arrow-forward" (click)="next()" style="margin-left:40px"></ion-icon>
     
-      <ion-col align-self-center>
-        <ion-card></ion-card>
-      </ion-col>
+     
     </ion-row>
   </ion-toolbar>
+  </div>
 </ion-footer> 
 
      
