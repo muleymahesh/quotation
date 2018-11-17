@@ -9,5 +9,20 @@ page-quotedetail {
 
 .masters {
    // background-color: #F4F4F4;
+.image.img{
     
+        position:absolute;
+        left: 0;
+        right: 0;
+        margin:0 auto;
+        top:50%;
+        transform:translateY(-50%);
+        align-items: center;
+    
+}
+ 
   }
+
+
+
+

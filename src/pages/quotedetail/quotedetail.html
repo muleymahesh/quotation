@@ -15,17 +15,28 @@
 <ion-content class="masters">
 
   <!--ion-card style="min-height:300px; padding:15px,10px,15px,10px; margin-top: 150px; border: none !important"-->
-    <div style="margin-top: 150px">
+    <div style="margin-top:150px; padding:20px">
+      
       
       <!-- <ion-item style="background-color: #F4F4F4;"> -->
-        <ion-avatar item-left >
+        <!--ion-avatar item-left >
           <img src="assets/imgs/{{quotes[i].img_name}}" alt="not found" height="90px" width="90px" style="margin-left:125px; border-radius: 60%">
            </ion-avatar>
       
       
       <p style="padding:15px; font-size: 25px; text-align: center; font-family:Lucida Calligraphy;font-style: italic"><b>"{{quotes[i].text}}"</b></p>
-      <p style=" color: black; font-size: 20px;margin-left:175px">-{{quotes[i].from}}</p><br><br><br>
+      <p style=" color: black; font-size: 20px;margin-left:175px">-{{quotes[i].from}}</p><br><br><br-->
       
+ 
+          <div class="image">
+            <ion-avatar item-right>
+             <img src="assets/imgs/{{quotes[i].img_name}}"  height="80px" width="50px"  style="border-radius: 50%; align-items: center;">
+            </ion-avatar>
+            </div>
+            <h2 style="font-family:Lucida Calligraphy;text-align: center"><b>"{{quotes[i].text}}"</b></h2>
+            <p style="text-align: center">-{{quotes[i].from}}</p>
+          
+        
     </div>
 <!--/ion-card-->
 
@@ -35,13 +46,13 @@
 
 
 <ion-footer>
-  <ion-toolbar>
+  <ion-toolbar >
      <ion-row align-items-center >
 
         <ion-icon name="arrow-back" (click)="privous()" style="margin-left:85px"></ion-icon>  
         <ion-icon name="heart-outline" (click)="toFav(quotes[i])" style="margin-left:35px"></ion-icon>
          
-              <button item-end ion-button clear icon-end tappable (click)="share()" style="margin-bottom: 20px; margin-left:30px">
+              <button item-end ion-button clear icon-end tappable (click)="share()" style="margin-bottom: 10px; margin-left:30px">
                 <ion-icon name="share"></ion-icon>
               </button>
                

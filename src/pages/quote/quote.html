@@ -17,15 +17,28 @@
 
   <div class = "list">
 
-  <ion-card style="min-height:90px; padding:15px,10px,15px,10px" *ngFor="let q of response, let i=index" (click)="goTo('QuotedetailPage',response,i)">
+  <ion-card style="min-height:90px; padding:15px" *ngFor="let q of response, let i=index" (click)="goTo('QuotedetailPage',response,i)">
       <div>
-        <p style="font-size: 17px; text-align: center"><b>{{q.text}}</b></p>
-        <ion-item>
-            <ion-avatar item-left >
-                <img src="assets/imgs/{{q.img_name}}" alt="not found" style="margin-left:55px">
-                 </ion-avatar>
-        <p style=" color: black; font-size: 15px">-{{q.from}}</p>
-        </ion-item>
+            <!--h2 style="font-size: 17px; text-align: center"><b>{{q.text}}</b></h2> 
+            <ion-item>
+                    
+                    <ion-avatar item-start>
+                            <img src="assets/imgs/{{q.img_name}}" alt="not found">
+                             </ion-avatar>
+                             <p style=" color: black; font-size: 15px">-{{q.from}}</p>
+              </ion-item-->
+
+              <ion-list>
+                    <ion-item>
+                      <ion-avatar item-start>
+                        <img src="assets/imgs/{{q.img_name}}" alt="not found" >
+                      </ion-avatar>
+                     <h2>{{q.text}}</h2>
+                      <p>-{{q.from}}</p>
+                    </ion-item>
+                  </ion-list>
+              
+         
     </div>
   </ion-card>
 
