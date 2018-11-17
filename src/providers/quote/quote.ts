@@ -68,6 +68,7 @@ export class QuoteProvider {
       text: quote.text,
       from: quote.from,
       img_name: quote.img_name,
+      isFav:quote.isFav,
      }
 
     this.quote.push(tmp);

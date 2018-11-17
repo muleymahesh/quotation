@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import{RestProvider}from '../../providers/rest/rest'
 import{QuoteProvider}from '../../providers/quote/quote'
 /**
- * Generated class for the FavPage page.
+
+/**
+ * Generated class for the FavouritePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,21 +14,18 @@ import{QuoteProvider}from '../../providers/quote/quote'
 
 @IonicPage()
 @Component({
-  selector: 'page-fav',
-  templateUrl: 'fav.html',
+  selector: 'page-favourite',
+  templateUrl: 'favourite.html',
 })
-export class FavPage {
-
-  response:any;
- 
-  constructor(public navCtrl: NavController,public _qute:QuoteProvider,public rest:RestProvider ,private storage: Storage,) {
-//this.response=this._qute.all;
-this.response=null;
-console.log(this.response);
+export class FavouritePage {
+response:any;
+  constructor(public navCtrl: NavController,public _qute:QuoteProvider,public rest:RestProvider) {
+    this.response=this._qute.all;
+   // this.response=null;
+    console.log(this._qute.all);
   }
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FavPage');
+    console.log('ionViewDidLoad FavouritePage');
   }
 
 }

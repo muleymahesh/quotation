@@ -30,9 +30,9 @@ favquotes:any[]=[];
     this.i=this.navParams.data.i;
     console.log(this.favquotes);
    
-    console.log(this.quotes);
+   // console.log(this.quotes);
    
-    console.log(this.i);
+   // console.log(this.i);
   }
 
   ionViewDidLoad() {
@@ -50,7 +50,7 @@ favquotes:any[]=[];
     if(this.i<this.quotes.length && this.i!=[this.quotes.length-1])
   {
     this.i=this.i+1;
-   this. checkfav();
+   //this. checkfav();
    }
   }
 
@@ -69,8 +69,10 @@ checkfav(quote)
 
 
 }
-  toFav(quote){
-    this._quote.post(quote);
+  toFav(abc){
+
+    console.log(abc);
+    this._quote.post(abc);
   }
  
 }
