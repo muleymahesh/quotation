@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar color="brown">
       <button ion-button menuToggle color="black">
@@ -14,30 +13,16 @@
   
   <div class = "list">
       <div class = "item">
-        <ion-card *ngFor="let q of ranno" style="min-height: 200px">
+        <ion-card *ngFor="let p of ranno" style="min-height: 200px">
           <ion-card-content style="padding:50px ; text-align: center">
-            <h2 style="margin-top:30px"><b>"{{q.qoute}}"</b></h2>
-              <p style="margin-left:150px">-{{q.author}}</p>
-              
-              <!-- <ion-icon name="share" style="margin"></ion-icon> -->
+            <h2 style="margin-top:30px"><b>"{{p.quote}}"</b></h2>
+              <p style="margin-left:150px">-{{p.author}}</p>
+            
           </ion-card-content>
-           <!-- <ion-list> 
-            <ion-item>
-              <ion-input [(ngModel)]="message" placeholder="Enter message"></ion-input>
-             </ion-item>
-             <ion-item>
-              <ion-input [(ngModel)]="file" placeholder="Enter file"></ion-input>
-             </ion-item>
-             <ion-item>
-              <ion-input [(ngModel)]="link" placeholder="Enter link"></ion-input>
-             </ion-item>
-             <ion-item>
-              <ion-input [(ngModel)]="subject" placeholder="Enter subject"></ion-input>
-             </ion-item>
-            </ion-list>-->
+           
           <ion-row>
               <ion-col text-right>
-                <button item-end ion-button clear icon-end tappable (click)="share(r.qoute,r.author)">
+                <button item-end ion-button clear icon-end tappable (click)="share(r.quote,r.author)">
                   <ion-icon name="share"></ion-icon>
                 </button>
                   </ion-col>
@@ -55,16 +40,7 @@
             </ion-item>
         </div>
       </ion-card>
-     <!-- <ion-card style="height:75px; padding:15px,10px,15px,10px">
-          <div>
-            <ion-item tappable (click)="goTo('CategoryPage')">
-                <ion-avatar item-left>
-                    <img src="assets/imgs/cat.png" alt="not found">
-                     </ion-avatar>
-            <p style="color: chocolate; font-size: 30px">&nbsp;&nbsp;&nbsp;&nbsp; Category</p>
-            </ion-item>
-        </div>
-      </ion-card>-->
+     
       <ion-card style="height:75px; padding:15px,10px,15px,10px">
           <div>
             <ion-item tappable (click)="goTo('AuthorPage')" style="margin-top:6px">
@@ -75,6 +51,7 @@
             </ion-item>
         </div>
       </ion-card>
+
       <ion-card style="height:75px; padding:15px,10px,15px,10px">
           <div>
             <ion-item tappable (click)="goTo('FavouritePage',0)" style="margin-top:6px">
@@ -90,25 +67,12 @@
 <ion-footer>
     <ion-toolbar>
        <ion-row align-items-center >
-      <!--  <ion-col class="total" align-self-center>
-          <h5>
-            <span class="disc" *ngIf="p1.per_discount">{{p1.mrp | money}}</span>
-            {{ pricestrikt(p1.per_discount,p1.mrp)| money}}
-          </h5>
-          <ion-row no-padding class="reviews">
-            <ion-col col-auto no-padding>
-              <ion-rating *ngIf="p1.average_rating" item-start
-                [numStars]="5"
-                [readOnly]="true"
-                [value]="p1.average_rating">
-              </ion-rating>
-               <span *ngIf="product.rating_count">{{product.rating_count}}</span> 
-            </ion-col>
-          </ion-row>
-        </ion-col> -->
+      
         <ion-col align-self-center>
           <ion-card></ion-card>
         </ion-col>
       </ion-row>
     </ion-toolbar>
   </ion-footer>
+ 
+

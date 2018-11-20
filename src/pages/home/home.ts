@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController, Platform, ModalController, NavParams } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Storage } from '@ionic/storage';
-//import{RestProvider}from '../../providers/rest/rest';
+import{RestProvider}from '../../providers/rest/rest';
 //import { DatabaseProvider } from './../../providers/database/database';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
@@ -18,17 +18,10 @@ export class HomePage {
   random;
   ranno :any[]=[];
   i;
-  data:any[]=[];
-  quote;
+  myObj:any[]=[];
+  quotes;
   allquotes:any;
-  response:any;
-  
-  constructor(public navCtrl: NavController, private storage: Storage, private socialSharing: SocialSharing, private platform: Platform, private sqlite: SQLite) {
-   
-   
-   this.data;
-
-  this.response =[
+  response =[
     { 
     "text":"The only people who never fail are those who never try.",
     "from":"Ilka Chase",
@@ -1980,6 +1973,11 @@ export class HomePage {
    ];
 
 
+  constructor(public navCtrl: NavController, private storage: Storage, private socialSharing: SocialSharing, private platform: Platform, private sqlite: SQLite) {
+   
+   
+   this.myObj;
+
    
    
   
@@ -2004,13 +2002,13 @@ export class HomePage {
       location: 'default'
     }).then((db: SQLiteObject) => {
       db.executeSql('CREATE TABLE IF NOT EXISTS quotes(quote TEXT,author TEXT,isFav TEXT,img_name TEXT)', [])
-      .then(res => this.getData())
+      .then(res => this.fillData())
     
    }).catch(e => console.log(e));
  
   }
 
-getRandom()
+selectRandom()
 {
   this.sqlite.create({
     name: 'quotes.db',
@@ -2020,7 +2018,7 @@ getRandom()
     .then(res => {
       this.ranno = [];
       for(var i=0; i<res.rows.length; i++) {
-        this.ranno.push({quote:res.rows.item(i).quote,author:res.rows.item(i).author,is_Fav:res.rows.item(i).is_Fav,img_name:res.rows.item(i).img_name})
+        this.ranno.push({quote:res.rows.item(i).quote,author:res.rows.item(i).author,isFav:res.rows.item(i).isFav,img_name:res.rows.item(i).img_name})
       }
       console.log(JSON.stringify(this.ranno));
     })
@@ -2028,7 +2026,7 @@ getRandom()
 });
 }
 
-  getData(){
+  fillData(){
    {
 
       this.sqlite.create({
@@ -2037,12 +2035,12 @@ getRandom()
       }).then((db: SQLiteObject) => {
         db.executeSql('SELECT * FROM quotes', [])
         .then(res => {
-          this.quote = [];
+          this.quotes = [];
           if(1>res.rows.length)
           {
             for(this.i=0;this.i<this.response.length;this.i++)
             {
-            db.executeSql('INSERT INTO quotes VALUES(?,?,?)',[this.response[this.i].text,this.response[this.i].from,this.response[this.i].img_name])
+            db.executeSql('INSERT INTO quotes VALUES(?,?,?,?)',[this.response[this.i].text,this.response[this.i].from,'null',this.response[this.i].img_name])
               .then(res => {
                 console.log(res);
                         })
@@ -2053,19 +2051,19 @@ getRandom()
           }
           db.executeSql('SELECT * FROM quotes', [])
           .then(res => {
-            this.data = [];
+            this.myObj = [];
             for(var i=0; i<res.rows.length; i++) {
-              this.data.push({quote:res.rows.item(i).quote,author:res.rows.item(i).author,is_Fav:res.rows.item(i).is_Fav,img_name:res.rows.item(i).img_name})
+              this.myObj.push({quote:res.rows.item(i).quote,author:res.rows.item(i).author,isFav:res.rows.item(i).isFav,img_name:res.rows.item(i).img_name})
             }
-            console.log(this.data);
+            console.log(this.myObj);
 
-this.getRandom();
+this.selectRandom();
           })
           .catch(e => console.log(e));
         })
       //   for(this.i=0;this.i<this.response.length;this.i++)
       //   {
-      //   db.executeSql('INSERT INTO quotes VALUES(?,?,?,?)',[this.response[this.i].text,this.response[this.i].from,this.response[this.i].is_fav,this.response[this.i].img_name])
+      //   db.executeSql('INSERT INTO quotes VALUES(?,?,?,?)',[this.response[this.i].text,this.response[this.i].from,this.response[this.i].isFav,this.response[this.i].img_name])
       //     .then(res => {
       //       console.log(res);
       //               })
@@ -2086,6 +2084,8 @@ this.getRandom();
 	}
   
 
+
+  
   share(quote,author){
     this.message=quote;
     this.socialSharing.share(this.message)
