@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-navbar color="brown">
       <button ion-button menuToggle color="black">
@@ -13,10 +14,10 @@
   
   <div class = "list">
       <div class = "item">
-        <ion-card style="min-height: 200px">
+        <ion-card *ngFor="let q of ranno" style="min-height: 200px">
           <ion-card-content style="padding:50px ; text-align: center">
-            <h2 style="margin-top:30px"><b>"{{response[ranno].text}}"</b></h2>
-              <p style="margin-left:150px">-{{response[ranno].from}}</p>
+            <h2 style="margin-top:30px"><b>"{{q.qoute}}"</b></h2>
+              <p style="margin-left:150px">-{{q.author}}</p>
               
               <!-- <ion-icon name="share" style="margin"></ion-icon> -->
           </ion-card-content>
@@ -36,7 +37,7 @@
             </ion-list>-->
           <ion-row>
               <ion-col text-right>
-                <button item-end ion-button clear icon-end tappable (click)="share()">
+                <button item-end ion-button clear icon-end tappable (click)="share(r.qoute,r.author)">
                   <ion-icon name="share"></ion-icon>
                 </button>
                   </ion-col>
@@ -110,4 +111,4 @@
         </ion-col>
       </ion-row>
     </ion-toolbar>
-  </ion-footer> 
+  </ion-footer>

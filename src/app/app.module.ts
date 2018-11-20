@@ -11,9 +11,10 @@ import { RestProvider} from '../providers/rest/rest';
 import { QuoteProvider } from '../providers/quote/quote';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { DatabaseProvider } from '../providers/database/database';
-import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { SQLite } from '@ionic-native/sqlite';
+import { Toast } from '@ionic-native/toast';
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -38,8 +39,8 @@ import { SQLite } from '@ionic-native/sqlite';
     RestProvider,
     QuoteProvider,
    SocialSharing,
-    DatabaseProvider ,
-   
+    
+   Toast,
     SQLitePorter,
     SQLite
   ]

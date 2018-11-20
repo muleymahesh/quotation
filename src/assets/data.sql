@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS data (
-from TEXT NULL,
+author TEXT NULL,
 img_name TEXT NULL,
 is_fav TEXT NULL,
 Quote TEXT NULL
