@@ -17,7 +17,7 @@
 
   <div class = "list">
 
-  <ion-card style="min-height:90px; padding:15px" *ngFor="let q of response, let i=index" (click)="goTo('QuotedetailPage',response,i)">
+  <ion-card style="min-height:90px; padding:15px" *ngFor="let q of myObj, let i=index" (click)="goTo('DetailPage',q,i)">
       <div>
             <!--h2 style="font-size: 17px; text-align: center"><b>{{q.text}}</b></h2> 
             <ion-item>
@@ -33,7 +33,7 @@
                       <ion-avatar item-start>
                         <img src="assets/imgs/{{q.img_name}}" alt="not found" >
                       </ion-avatar>
-                     <h2>{{q.quote}}</h2>
+                     <h2>{{q.qoute}}</h2>
                       <p>-{{q.author}}</p>
                     </ion-item>
                   </ion-list>

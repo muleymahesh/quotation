@@ -16,38 +16,37 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
   templateUrl: 'quote.html',
 })
 export class QuotePage {
-response:any;
- data:any[]=[];
-  constructor(public navCtrl: NavController,private sqlite: SQLite,public rest:RestProvider ,private storage: Storage,) {
+response:any=[]=[];
+ myObj:any[]=[];
+  constructor(public navCtrl: NavController,public rest:RestProvider ,private storage: Storage, private sqlite: SQLite) {
     //this.response = JSON.stringify(this.myObj);
-  this.getQuotes();
-  this.data;
-  this.response=this.rest.all;
+  this.getAllQoutes();
+  this.response
     console.log(this.response);
    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuotePage');
   }
-
-  getQuotes(){
+   getAllQoutes()
+  {
     this.sqlite.create({
-      name: 'quotes.db',
+      name: 'qoutes.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      db.executeSql('SELECT * FROM quotes', [])
+      db.executeSql('SELECT * FROM qoutes', [])
       .then(res => {
-        this.data = [];
+        this.myObj = [];
         for(var i=0; i<res.rows.length; i++) {
-          this.data.push({quote:res.rows.item(i).quote,author:res.rows.item(i).author,isFav:res.rows.item(i).isFav,img_name:res.rows.item(i).img_name})
+          this.myObj.push({qoute:res.rows.item(i).qoute,author:res.rows.item(i).author,is_Fav:res.rows.item(i).is_Fav,img_name:res.rows.item(i).img_name})
         }
-      
+        console.log(this.myObj);
+       
     });
   });
-}
-
-  goTo(QuoteDetail, params,i){
-		this.navCtrl.push(QuoteDetail,{params:params,i:i});
+  } 
+  goTo(page, params,i){
+		this.navCtrl.push(page,{params:params,i:i,d_type:'all'});
   }
   
   

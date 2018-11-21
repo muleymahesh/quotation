@@ -15,16 +15,16 @@
 
 <ion-content class="masters">
 
-    <div class = "list" *ngFor="let q of uniarray, let i=index" (click)="goTo('QuotedetailPage',uniarray,i)">
+    <div class = "list" *ngFor="let q of myObj, let i=index" (click)="goTo('QuotedetailPage',q,i,'author')">
   
-    <ion-card style="min-height:90px; padding:15px" >
+    <ion-card style="min-height:90px; padding:15px,10px,15px,10px" >
         <div >
-          <p style="font-size: 17px; text-align: center"><b>{{q.text}}</b></p>
+          <p style="font-size: 17px; text-align: center"><b>{{q.qoute}}</b></p>
           <ion-item>
               <ion-avatar item-left >
                   <img src="assets/imgs/{{q.img_name}}" alt="not found" style="margin-left:55px">
                    </ion-avatar>
-          <p style=" color: black; font-size: 15px">-{{q.from}}</p>
+          <p style=" color: black; font-size: 15px">-{{q.author}}</p>
           </ion-item>
       </div>
     </ion-card>
